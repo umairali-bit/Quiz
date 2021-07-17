@@ -14,16 +14,16 @@
   <body>
       <header>
           <div>
-            <button class ="button" type="button">View High Score</button>
+            <button id ="button" type="button">View High Score</button>
           </div>
           <div id="timer">Time:0</div>
     </header>
     <section class ="main">
-      <div class="intro">
-        <h1 class="intro-heading">
+      <div id="intro">
+        <h1 id="intro-heading">
           Welcome to JavaScript Coding Quiz Challenege!
         </h1>
-        <p class="intro-p">
+        <p id="intro-p">
           Try to answer the following javascript code questions within the time limit. 
           Keep in mind that incorrect answers will penalize your score/time by ten seconds!
         </p>
@@ -34,6 +34,8 @@
     <ul id="option-list"></ul>
 
     <div id="question-result"></div>
+    <div id="finalScore"></div>
+    <div id="feedback"></div>
   </section>
 
     <script src="./assets/js/quiz.js"></script>
