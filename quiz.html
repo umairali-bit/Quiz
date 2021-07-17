@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>quiz</title>
+  </head>
+  <!-- 
+    Div for highScore
+    Div for time  
+    Parent div to wrap H1 <p> and button
+    questions, final score, feedback 
+  -->
+  <body>
+      <header>
+          <div>
+            <button class ="button" type="button">View High Score</button>
+          </div>
+          <div id="timer">Time:0</div>
+    </header>
+    <section class ="main">
+      <div class="intro">
+        <h1 class="intro-heading">
+          Welcome to JavaScript Coding Quiz Challenege!
+        </h1>
+        <p class="intro-p">
+          Try to answer the following javascript code questions within the time limit. 
+          Keep in mind that incorrect answers will penalize your score/time by ten seconds!
+        </p>
+        <button class="button" type="button"> Start </button>
+      </div>
+    <div id="question"></div>
+
+    <ul id="option-list"></ul>
+
+    <div id="question-result"></div>
+  </section>
+
+    <script src="./assets/js/quiz.js"></script>
+  </body>
+</html>
