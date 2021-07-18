@@ -1,68 +1,56 @@
 var questions = [
   {
-    question: "Commonly used data types DO NOT include:",
+    question: "1. Commonly used data types DO NOT include:",
     choices: ["strings", "booleans", "alerts", "numbers"],
     answer: "alerts",
   },
   {
     question:
-      "The condition in an if / else statement is enclosed within ____.",
+      "2. The condition in an if / else statement is enclosed within ____.",
     choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
     answer: "parentheses",
   },
   {
     question:
-    "Arrays in JavaScript can be used to store:",
-    choices: ["numbers and strings", "other arrays","booleans", "all of the above" ],
-    answer:"numbers and strings"
-  },
-  {
-   question:
-   "If a loop does not contain within itself a way to terminate, it is called a(n) ____.",
-   choices: ["while loop", "do-while loop", "for loop", "infinite loop"],
-   answer: "infinite loop",
+      "3. All Java Programming statements must end with a ____.",
+    choices: ["semicolon", "colon", "period", "comma"],
+    answer: "semicolon",
   },
   {
     question:
-      "The condition in an if / else statement is enclosed within ____.",
-    choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-    answer: "parentheses",
+      "4. A boolean value variable can hold ____.",
+    choices: ["any character", "any whole number", "any decimal number", "the value of true or false"],
+    answer: "the value of true or false",
   },
+  {
+    question:
+      "5. If a loop does not contain within itself a way to terminate, it is called a(n) ____.",
+    choices: ["while loop", "do-while loop", "for loop", "infinite loop"],
+    answer: "infinite loop",
+  },
+
 ];
 
 var questionEl = document.querySelector("#question");
 var optionListEl = document.querySelector("#option-list");
 var questionResultEl = document.querySelector("#question-result");
 var timerEl = document.querySelector("#timer");
-var buttonStEl = document.querySelector("#button-start");
-var introEl = document.querySelector("#intro");
-var feedbackEl = document.querySelector ("#feedBack")
 
 var questionIndex = 0;
 var correctCount = 0;
 
-var time = 75;
+var time = 20;
 var intervalId;
-
-function startQuiz() {
-  timerEl.textContent = "Time: " + time;
-  renderQuestion();
-}
-
-function hideStart() {
-  introEl.style.visibility = 'hidden';
-}
 
 function endQuiz() {
   clearInterval(intervalId);
   var body = document.body;
-  body.innerHTML = "All done, You scored: " + correctCount;
-  body.setAttribute("style", "text-align:center; font-size:50px; padding-top: 50px");
+  body.innerHTML = "Game over, You scored " + correctCount;
 }
 
 function updateTime() {
   time--;
-  timerEl.textContent = "Time: " + time;
+  timerEl.textContent = time;
   if (time <= 0) {
     endQuiz();
   }
@@ -109,21 +97,12 @@ function checkAnswer(event) {
       correctCount++;
     } else {
       questionResultEl.textContent = "Incorrect";
-      time = time - 5;
+      time = time - 2;
       timerEl.textContent = time;
     }
   }
   setTimeout(nextQuestion, 2000);
 }
 
+renderQuestion();
 optionListEl.addEventListener("click", checkAnswer);
-buttonStEl.addEventListener("click", () => {
-  hideStart();
-  renderQuestion();
-  startQuiz();
-}
-);
-
-
-
-
