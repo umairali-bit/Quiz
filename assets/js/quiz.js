@@ -36,6 +36,7 @@ var questionResultEl = document.querySelector("#question-result");
 var timerEl = document.querySelector("#timer");
 var buttonStEl = document.querySelector("#button-start");
 var introEl = document.querySelector("#intro");
+var feedbackEl = document.querySelector ("#feedBack")
 
 var questionIndex = 0;
 var correctCount = 0;
@@ -44,23 +45,24 @@ var time = 75;
 var intervalId;
 
 function startQuiz() {
-  timerEl.textContent = time;
+  timerEl.textContent = "Time: " + time;
   renderQuestion();
 }
 
 function hideStart() {
-  introEl.style.display = 'none';
+  introEl.style.visibility = 'hidden';
 }
 
 function endQuiz() {
   clearInterval(intervalId);
   var body = document.body;
-  body.innerHTML = "Game over, You scored " + correctCount;
+  body.innerHTML = "All done, You scored: " + correctCount;
+  body.setAttribute("style", "text-align:center; font-size:50px; padding-top: 50px");
 }
 
 function updateTime() {
   time--;
-  timerEl.textContent = time;
+  timerEl.textContent = "Time: " + time;
   if (time <= 0) {
     endQuiz();
   }
@@ -107,7 +109,7 @@ function checkAnswer(event) {
       correctCount++;
     } else {
       questionResultEl.textContent = "Incorrect";
-      time = time - 2;
+      time = time - 5;
       timerEl.textContent = time;
     }
   }
@@ -121,3 +123,6 @@ buttonStEl.addEventListener("click", () => {
   startQuiz();
 }
 );
+
+
+
