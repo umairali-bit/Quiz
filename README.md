@@ -3,7 +3,7 @@
 
 
 ## **DESCRIPTION**
-"Quiz" tests you on 5 questions. the timer starts as soon as the page is done loading. It lets you choose the option of your choice, lets you know if the option was true or false, keeps a track of your correct answers and display the number of correct answers at the end. It also penalize you for choosing a false option.
+"Quiz" tests you on 5 questions. The timer starts as soon as the page is done loading. It lets you choose the option of your choice, lets you know if the option was true or false, keeps a track of your true options and display the number of your true options at the end. It also penalize you for choosing a false option.
 
 
 
