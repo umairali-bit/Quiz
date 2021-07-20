@@ -30,7 +30,6 @@ var questions = [
   },
 
 ];
-
 var questionEl = document.querySelector("#question");
 var optionListEl = document.querySelector("#option-list");
 var questionResultEl = document.querySelector("#question-result");
@@ -39,7 +38,7 @@ var timerEl = document.querySelector("#timer");
 var questionIndex = 0;
 var correctCount = 0;
 
-var time = 20;
+var time = 75;
 var intervalId;
 
 function endQuiz() {
@@ -65,13 +64,13 @@ function renderQuestion() {
 
   intervalId = setInterval(updateTime, 1000);
   
-  questionEl.textContent = questions[questionIndex].question;
+  questionEl.textContent = questions[questionIndex]?.question;
 
   optionListEl.innerHTML = "";
   questionResultEl.innerHTML = "";
 
-  var choices = questions[questionIndex].choices;
-  var choicesLenth = choices.length;
+  var choices = questions[questionIndex]?.choices;
+  var choicesLenth = choices?.length;
 
   for (var i = 0; i < choicesLenth; i++) {
     var questionListItem = document.createElement("li");
@@ -97,7 +96,7 @@ function checkAnswer(event) {
       correctCount++;
     } else {
       questionResultEl.textContent = "Incorrect";
-      time = time - 2;
+      time = time - 15;
       timerEl.textContent = time;
     }
   }
