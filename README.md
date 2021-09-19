@@ -7,7 +7,3 @@
 
 
 
-**Screen Shot**
-  <br>
-  <br>
-![Screen shot](/assets/image/Screen%20Shot%202021-07-19%20at%2011.02.26%20PM.png)
